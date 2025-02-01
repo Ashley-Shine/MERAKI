@@ -1,0 +1,8 @@
+body {
+    background-image: url('Calmcove.jpg');
+    background-size: cover;  /* Ensures the image covers the entire page */
+    background-position: center center;  /* Centers the image */
+    background-repeat: no-repeat;  /* Prevents the image from repeating */
+    height: 100vh;  /* Makes sure the background covers the full height */
+    margin: 0;  /* Removes any default margin */
+}
