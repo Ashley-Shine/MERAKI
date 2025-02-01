@@ -99,7 +99,10 @@
                 <input type="submit" value="Add Song" onclick="addSong()">
             </div>
             <div class="playlist">
-                <h2>Premade Lofi Playlist</h2>
+                <button onclick="redirectToWebsite()"><h2>songs we created for you</h2></button>
+
+                
+                
                 <ul>
                     <li>Chill Lofi Beats</li>
                     <li>Relaxing Nature Sounds</li>
@@ -120,6 +123,9 @@
                 userPlaylist.appendChild(li);
                 songInput.value = '';
             }
+        }
+        function redirectToWebsite() {
+            window.location.href = 'file:///C:/Users/LENOVO/OneDrive/Desktop/MERAKI/codepart.html';
         }
     </script>
 </body>
