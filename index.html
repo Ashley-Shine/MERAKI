@@ -98,10 +98,24 @@
                     <!-- User's favorite songs will be added here -->
                 </ul>
             </div>
-            <div class="add-song">
-                <h2>Add a Song</h2>
-                <input type="text" id="song-input" placeholder="Enter song name">
-                <input type="submit" value="Add Song" onclick="addSong()">
+            <div class="Upload-song">
+                <h2>Upload a Song</h2>
+                <input type="submit" value="Upload Song" onclick="uploadSong()">
+                <input type="file" id="fileInput" accept="audio/mp3" />
+<audio id="audioPlayer" controls></audio>
+
+<script>
+    document.getElementById('fileInput').addEventListener('change', function(event) {
+        let file = event.target.files[0]; // Get the uploaded file
+        if (file) {
+            let objectURL = URL.createObjectURL(file); // Create a temporary URL for the file
+            let audioPlayer = document.getElementById('audioPlayer');
+            audioPlayer.src = objectURL; // Set audio source to uploaded file
+            audioPlayer.play(); // Play the audio
+     
+        }
+    });
+</script>
             </div>
             <div class="playlist">
                 <button onclick="redirectToWebsite()"><h2>songs we created for you</h2></button>
