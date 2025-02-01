@@ -18,7 +18,31 @@
             margin: 0;
             padding: 0;
         }
-        .container {
+        .slider {
+            display: flex;
+            width: 300%;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            flex-shrink: 0;
+        }
+        .slide1 { background-color: rgb(245, 243, 243); }
+        .slide2 { background-color: rgb(241, 244, 246); }
+        .slide3 { background-color: rgb(245, 245, 245); }
+        .navigation {
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .navigation button {
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        /* .container { 
             width: 80%;
             margin: auto;
             overflow: hidden;
@@ -79,11 +103,39 @@
             color: #fff;
             border: none;
             cursor: pointer;
-        }
+        /* } */
     </style>
 
 <body>
-    <header>
+    <div class="slider" id="slider">
+        <div class="slide slide1" class="audio-player">page1<img src="https://img.freepik.com/premium-photo/collection-autumn-leaves-with-word-autumn-bottom_391229-711.jpg" alt="img not available" width="968" height="530">
+            <audio controls>
+            <source src="lofi1.mp3" type="audio/mpeg">
+        </audio></div>
+        <div class="slide slide2" class="audio-player">Page 2<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi79eoHk2c9h7EBQEqZk1PWAEB7EmrqcBPNg&s" alt="img not available" width="968" height="530"><audio controls>
+        
+            <source src="lofi2.mp3" type="audio/mpeg">
+            <!-- Your browser does not support the audio element.</Your> -->
+        </audio></div>
+        <div class="slide slide3" class="audio-player">Page 3<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgMvYcFVJnJNdK67b4F4VEDmZytqe8FHA11g&s" alt="img not available" width="968" height="530"><audio controls>
+            <source src="lofi 3.mp3" type="audio/mpeg">
+        </audio></div>
+    </div>
+    <div class="navigation">
+        <button onclick="slideTo(0)">Page 1</button>
+        <button onclick="slideTo(1)">Page 2</button>
+        <button onclick="slideTo(2)">Page 3</button>
+    </div>
+    <script>
+        function slideTo(index) {
+            const slider = document.getElementById('slider');
+            slider.style.transform = `translateX(-${index * 100}vw)`;
+        }
+    </script>
+</body>
+</html>
+<!--  
+    <header> 
         <div class="container">
             <img src="meraki1.jpg" alt="img not available" width="300" height="250">
             
@@ -129,4 +181,4 @@
         </audio>
     </div>
 </body>
-</html>
+ </html> -->
