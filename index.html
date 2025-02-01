@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>meraki
+    </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ebf7ef;
+            font-style: italic;
+            font-family: 'Cursive', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #267e42;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #0d5d26 3px solid;
+        }
+        header a {
+            color: #131010;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+        }
+        header li {
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+        .main-content {
+            padding: 20px;
+            background: #fff;
+            margin-top: 20px;
+        }
+        .playlist {
+            margin-top: 20px;
+        }
+        .playlist h2 {
+            margin-bottom: 10px;
+        }
+        .playlist ul {
+            list-style: none;
+            padding: 0;
+        }
+        .playlist li {
+            background: #eee;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .add-song {
+            margin-top: 20px;
+        }
+        .add-song input[type="text"] {
+            padding: 10px;
+            width: 80%;
+            margin-right: 10px;
+        }
+        .add-song input[type="submit"] {
+            padding: 10px;
+            background: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="C:\Users\LENOVO\Downloads\meraki1.jpg" alt="img not available" width="300" height="250">
+            
+            <h1 style="font-family:cursive; font-style: italic;color: #f8f4f4;"><i></i></h1>        </div>
+    </header>
+    <div class="container">
+        <div class="main-content">
+            <div class="playlist">
+                <h2>Your Playlist</h2>
+                <ul id="user-playlist">
+                    <!-- User's favorite songs will be added here -->
+                </ul>
+            </div>
+            <div class="add-song">
+                <h2>Add a Song</h2>
+                <input type="text" id="song-input" placeholder="Enter song name">
+                <input type="submit" value="Add Song" onclick="addSong()">
+            </div>
+            <div class="playlist">
+                <h2>Premade Lofi Playlist</h2>
+                <ul>
+                    <li>Chill Lofi Beats</li>
+                    <li>Relaxing Nature Sounds</li>
+                    <li>Calm Ocean Waves</li>
+                    <li>Gentle Rainfall</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        function addSong() {
+            var songInput = document.getElementById('song-input');
+            var songName = songInput.value;
+            if (songName) {
+                var userPlaylist = document.getElementById('user-playlist');
+                var li = document.createElement('li');
+                li.textContent = songName;
+                userPlaylist.appendChild(li);
+                songInput.value = '';
+            }
+        }
+    </script>
+</body>
+</html>
